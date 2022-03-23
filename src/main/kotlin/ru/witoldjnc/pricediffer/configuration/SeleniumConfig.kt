@@ -16,16 +16,13 @@ class SeleniumConfig {
     @Value("\${selenium.driver.name}")
     private lateinit var driver: String
 
-//    @Value("\${prk.cookie}")
-//    private lateinit var cookieValue: String
-
     @Bean
     @RequestScope(proxyMode = ScopedProxyMode.TARGET_CLASS)
     fun webDriver(): WebDriver? {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/${driver}")
 
         val options = ChromeOptions()
-                .addArguments("--no-sandbox")
+                .addArguments("--no-sandbox --disable-dev-shm-usage")
                 .setHeadless(true)
         val driver = ChromeDriver(options)
         driver.setLogLevel(Level.WARNING)
