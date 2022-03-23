@@ -10,11 +10,11 @@ import ru.witoldjnc.pricediffer.dto.RoadmapProduct
 import ru.witoldjnc.pricediffer.repository.Connector
 import java.io.File
 
-internal class ShopFetcherServiceTest() {
-    private val wrapper = Mockito.mock(Connector::class.java)
+internal class ShopFetcherServiceTest() : TestUtils() {
+    private val connector = Mockito.mock(Connector::class.java)
     private val parser = Mockito.mock(JsonRoadmapParser::class.java)
 
-    private val fetcher = ShopFetcherService(wrapper, parser);
+    private val fetcher = ShopFetcherService(connector, parser);
 
     @BeforeEach
     fun init() {
@@ -26,8 +26,8 @@ internal class ShopFetcherServiceTest() {
         val documentWithoutSale = Jsoup.parse(htmlWithoutSale)
         val documentWithSale = Jsoup.parse(htmlWithSale)
 
-        Mockito.`when`(wrapper.connect("withoutSale-url")).thenReturn(documentWithoutSale)
-        Mockito.`when`(wrapper.connect("withSale-url")).thenReturn(documentWithSale)
+        Mockito.`when`(connector.connect("withoutSale-url")).thenReturn(documentWithoutSale)
+        Mockito.`when`(connector.connect("withSale-url")).thenReturn(documentWithSale)
         Mockito.`when`(parser.parseRoadMap()).thenReturn(roadmapProducts)
     }
 
@@ -46,14 +46,12 @@ internal class ShopFetcherServiceTest() {
         assertEquals(169.90, fetchPriceFromItem)
     }
 
-
     @Test
-    fun enrichPriceFromRoadmapTest(){
+    fun enrichPriceFromRoadmapTest() {
         val enrichPriceFromRoadmapItems = fetcher.enrichPriceFromRoadmapItems()
         assertTrue(enrichPriceFromRoadmapItems.size == 2)
         assertEquals(41.9, enrichPriceFromRoadmapItems.find { it.url.equals("withoutSale-url") }?.price)
         assertEquals(169.9, enrichPriceFromRoadmapItems.find { it.url.equals("withSale-url") }?.price)
     }
 
-    fun readFileDirectlyAsText(fileName: String): String = File(fileName).readText(Charsets.UTF_8)
 }
