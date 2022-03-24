@@ -11,7 +11,7 @@ import java.nio.file.Paths
 @Component
 class JsonRoadmapParser {
 
-    fun parseRoadMap(): List<RoadmapProduct> {
+    fun getItemsFromRoadmap(): List<RoadmapProduct> {
         val gson = Gson()
         val newBufferedReader = Files.newBufferedReader(Paths.get("src/main/resources/roadmap.json"))
         return gson.fromJson<RoadmapListProducts>(newBufferedReader, RoadmapListProducts::class.java).product

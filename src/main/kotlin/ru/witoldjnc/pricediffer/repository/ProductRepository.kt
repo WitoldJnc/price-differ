@@ -2,7 +2,7 @@ package ru.witoldjnc.pricediffer.repository
 
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
-import ru.witoldjnc.pricediffer.dto.Products
+import ru.witoldjnc.pricediffer.model.Products
 import java.time.LocalDate
 
 @Repository
