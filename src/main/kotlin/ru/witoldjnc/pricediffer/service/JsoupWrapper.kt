@@ -12,9 +12,6 @@ import ru.witoldjnc.pricediffer.repository.Connector
 @Service
 class JsoupWrapper : Connector {
 
-    @Value("\${prk.cookie}")
-    private lateinit var cookieValue: String
-
     override fun connect(url: String) = runBlocking {
         var page = Jsoup.connect(url)
                 .get();

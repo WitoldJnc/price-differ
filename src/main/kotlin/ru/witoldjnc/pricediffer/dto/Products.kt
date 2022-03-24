@@ -3,6 +3,7 @@ package ru.witoldjnc.pricediffer.dto
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.Field
 import java.time.LocalDate
 
 @Document(collection = "products")
@@ -11,6 +12,7 @@ class Products {
     var id: String? = null;
 
     @Indexed(unique = true)
+    @Field("date")
     var date = LocalDate.now()
 
     var currentCourse: Double = 0.0
