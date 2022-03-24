@@ -13,4 +13,5 @@ class ProductItem {
         price = roadmapProduct.price
     }
 
+    constructor()
 }
