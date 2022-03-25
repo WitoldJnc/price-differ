@@ -2,381 +2,326 @@
   "categories": [
     {
       "categoryId": 1,
-      "name": "Молоко, сыр, яйца",
-      "baseUrl": "https://www.perekrestok.ru/cat/mc/113/moloko-syr-ajca",
+      "name": "Молоко",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/114/moloko",
       "items": [
         {
-          "itemId": 1,
-          "name": "Молоко ультрапастеризованное Домик в деревне 3.2%",
-          "url": "/cat/370/p/moloko-ultrapasterizovannoe-domik-v-derevne-3-2-925ml-2059346"
+          "id": 1,
+          "name": "Молоко пастеризованное Домик в деревне 3.7%"
         },
         {
-          "itemId": 2,
-          "name": "Молоко Parmalat безлактозное ультрапастеризованное 3.5%",
-          "url": "/cat/370/p/moloko-parmalat-bezlaktoznoe-ultrapasterizovannoe-3-5-1l-4069505"
-        },
-        {
-          "itemId": 3,
-          "name": "Сыр Предгорье Кавказа Адыгейский 45%",
-          "url": "/cat/371/p/syr-predgore-kavkaza-adygejskij-45-300g-3506471"
-        },
-        {
-          "itemId": 4,
-          "name": "Сыр Arla Natura Сливочный 45%",
-          "url": "/cat/371/p/syr-arla-natura-slivocnyj-45-400g-34821"
-        },
-        {
-          "itemId": 5,
-          "name": "Сыр полутвёрдый Брест-Литовск Российский 50%",
-          "url": "/cat/371/p/syr-polutverdyj-brest-litovsk-rossijskij-50-200g-4046889"
-        },
-        {
-          "itemId": 6,
-          "name": "Творог Простоквашино рассыпчатый 5%",
-          "url": "/cat/373/p/tvorog-prostokvasino-rassypcatyj-5-320g-4068000"
-        },
-        {
-          "itemId": 7,
-          "name": "Сырок творожный Б.Ю.Александров",
-          "url": "/cat/373/p/syrok-tvoroznyj-b-u-aleksandrov-s-vanilu-glazirovannyj-v-molocnom-sokolade-26-50g-3280306"
-        },
-        {
-          "itemId": 8,
-          "name": "Яйцо куриное Роскар Деревенское С1, 10шт",
-          "url": "/cat/374/p/ajco-kurinoe-roskar-derevenskoe-s1-10st-33654"
-        },
-        {
-          "itemId": 9,
-          "name": "Масло сладко-сливочное Брест-Литовск несолёное 82.5",
-          "url": "/cat/376/p/maslo-sladko-slivocnoe-brest-litovsk-nesolenoe-82-5-400g-4175276"
-        },
-        {
-          "itemId": 10,
-          "name": "Кефир Домик в деревне 3.2%",
-          "url": "/cat/375/p/kefir-domik-v-derevne-3-2-1l-18997"
-        },
-        {
-          "itemId": 11,
-          "name": "Сметана Домик в деревне 20%",
-          "url": "/cat/370/p/smetana-domik-v-derevne-20-300g-3664287"
+          "id": 2,
+          "name": "Молоко Простоквашино пастеризованное 2.5%"
         }
       ]
     },
     {
       "categoryId": 2,
-      "name": "Овощи",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/150/ovosi",
+      "name": "Сыр",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/122/syr",
       "items": [
         {
-          "itemId": 12,
-          "name": "Картофель, кг",
-          "url": "/cat/366/p/kartofel-kg-769"
+          "id": 3,
+          "name": "Сыр Galbani Моцарелла 45%"
         },
         {
-          "itemId": 13,
-          "name": "Морковь, кг",
-          "url": "/cat/366/p/morkov-mytaa-kg-52112"
+          "id": 4,
+          "name": "Сыр Предгорье Кавказа Адыгейский 45%"
         },
         {
-          "itemId": 14,
-          "name": "Томаты красные сливовидные",
-          "url": "/cat/366/p/tomaty-krasnye-slivovidnye-kg-14811"
+          "id": 5,
+          "name": "Сыр Arla Natura Сливочный лёгкий 16%"
         },
         {
-          "itemId": 15,
-          "name": "Огурцы гладкие среднеплодные",
-          "url": "/cat/366/p/ogurcy-gladkie-sredneplodnye-kg-2098997"
+          "id": 6,
+          "name": "Сыр мягкий Mlekara Subotica Сербская брынза 45%"
         }
       ]
     },
     {
       "categoryId": 3,
-      "name": "Фрукты",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/153/frukty",
+      "name": "Творог",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/117/tvorog",
       "items": [
         {
-          "itemId": 16,
-          "name": "Яблоки Гренни смит",
-          "url": "/cat/350/p/abloki-grenni-smit-kg-3366327"
+          "id": 7,
+          "name": "Творог Село Зелёное обезжиренный 0%"
         },
         {
-          "itemId": 17,
-          "name": "Яблоки Гала",
-          "url": "/cat/350/p/abloki-gala-kg-3366336"
-        },
-        {
-          "itemId": 18,
-          "name": "Апельсины",
-          "url": "/cat/367/p/apelsiny-kg-1535"
-        },
-        {
-          "itemId": 19,
-          "name": "Бананы",
-          "url": "/cat/367/p/banany-kg-3757"
-        },
-        {
-          "itemId": 20,
-          "name": "Авокадо",
-          "url": "/cat/367/p/avokado-kg-49622"
-        },
-        {
-          "itemId": 21,
-          "name": "Мандарины",
-          "url": "/cat/367/p/mandariny-kg-1537"
+          "id": 8,
+          "name": "Творог Село Зелёное Традиция 5%"
         }
       ]
     },
     {
       "categoryId": 4,
-      "name": "Макароны, паста",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/105/makarony-pasta",
+      "name": "Яйца",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/123/ajca",
       "items": [
         {
-          "itemId": 22,
-          "name": "Barilla Capellini n.1",
-          "url": "/cat/390/p/makaronnye-izdelia-barilla-capellini-n-1-iz-tverdyh-sortov-psenicy-450g-4037645"
+          "id": 9,
+          "name": "Яйцо куриное Роскар Деревенское С1"
         },
         {
-          "itemId": 23,
-          "name": "Макароны Makfa соломка длинная",
-          "url": "/cat/390/p/makarony-makfa-solomka-dlinnaa-400g-91302"
-        },
-        {
-          "itemId": 24,
-          "name": "Barilla Penne Rigate n.73",
-          "url": "/cat/390/p/makaronnye-izdelia-barilla-penne-rigate-n-73-iz-tverdyh-sortov-psenicy-450g-4037652"
-        },
-        {
-          "itemId": 25,
-          "name": "Макароны Makfa ракушки",
-          "url": "/cat/390/p/makarony-makfa-rakuski-450g-2013077"
+          "id": 10,
+          "name": "Яйцо Окское столовое СО"
         }
       ]
     },
     {
       "categoryId": 5,
-      "name": "Крупы",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/107/krupy-i-bobovye",
+      "name": "Сметана",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/118/smetana",
       "items": [
         {
-          "itemId": 26,
-          "name": "Рис Агро-Альянс",
-          "url": "/cat/464/p/ris-agro-alans-kubanskij-ekstra-elitnyj-slifovannyj-900g-14304"
+          "id": 11,
+          "name": "Сметана Простоквашино 15%, 300"
         },
         {
-          "itemId": 27,
-          "name": "Гречка Увелка Экстра",
-          "url": "/cat/464/p/grecka-uvelka-ekstra-800g-39155"
-        },
-        {
-          "itemId": 28,
-          "name": "Пшено Мистраль Золотое шлифованное",
-          "url": "/cat/464/p/pseno-mistral-zolotoe-slifovannoe-900g-3019675"
-        },
-        {
-          "itemId": 29,
-          "name": "Чечевица",
-          "url": "/cat/464/p/cecevica-mistral-smes-krasnoj-i-zeltoj-450g-3651907"
+          "id": 12,
+          "name": "Сметана Домик в деревне 20%, 300"
         }
       ]
     },
     {
       "categoryId": 6,
-      "name": "Мука",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/106/muka",
+      "name": "Кисломолочные продукты",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/120/kislomolocnye-produkty",
       "items": [
         {
-          "itemId": 30,
-          "name": "Мука Makfa пшеничная",
-          "url": "/cat/396/p/muka-makfa-psenicnaa-vyssego-sorta-1kg-2003107"
+          "id": 13,
+          "name": "Кефир Простоквашино 2.5%"
         },
         {
-          "itemId": 31,
-          "name": "Мука Рязаночка ржаная хлебопекарная",
-          "url": "/cat/396/p/muka-razanocka-rzanaa-hlebopekarnaa-obdirnaa-1kg-3653414"
+          "id": 14,
+          "name": "Ряженка Домик в Деревне 3.2%"
         }
       ]
     },
     {
       "categoryId": 7,
-      "name": "Печенье, крекеры, вафли, пряники",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/197/pecene-krekery-vafli-praniki",
+      "name": "Масло",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/121/maslo",
       "items": [
         {
-          "itemId": 32,
-          "name": "Печенье Belvita Утреннее",
-          "url": "/cat/399/p/pecene-belvita-utrennee-zlaki-jogurtovaa-nacinka-253g-3632839"
+          "id": 15,
+          "name": "Масло сливочное Экомилк Традиционное 82.5%"
         },
         {
-          "itemId": 33,
-          "name": "Печенье Юбилейное молочное",
-          "url": "/cat/399/p/pecene-ubilejnoe-molocnoe-vitaminizirovannoe-s-glazuru-116g-3472180"
-        },
-        {
-          "itemId": 34,
-          "name": "Печенье Milka Biscuits",
-          "url": "/cat/399/p/pecene-milka-biscuits-s-kusockami-molocnogo-sokolada-168g-3639099"
-        },
-        {
-          "itemId": 35,
-          "name": "Печенье Посиделкино Овсяное",
-          "url": "/cat/399/p/pecene-posidelkino-ovsanoe-klassiceskoe-320g-2023501"
+          "id": 16,
+          "name": "Масло сладкосливочное Коровка Из Кореновки 82.5%"
         }
       ]
     },
     {
       "categoryId": 8,
-      "name": "Молочный и белый шоколад",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/195/molocnyj-i-belyj-sokolad",
+      "name": "Овощи",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/150/ovosi",
       "items": [
         {
-          "itemId": 36,
-          "name": "Шоколад Алёнка",
-          "url": "/cat/402/p/sokolad-molocnyj-krasnyj-oktabr-alenka-90g-4132825"
+          "id": 17,
+          "name": "Огурцы гладкие среднеплодные"
         },
         {
-          "itemId": 37,
-          "name": "Шоколад молочный Milka",
-          "url": "/cat/402/p/sokolad-molocnyj-milka-85g-4109507"
+          "id": 18,
+          "name": "Томаты красные сливовидные, кг"
         },
         {
-          "itemId": 38,
-          "name": "Шоколад молочный Alpen Gold",
-          "url": "/cat/402/p/sokolad-molocnyj-alpen-gold-s-fundukom-85g-4053758"
+          "id": 19,
+          "name": "Морковь мытая, кг"
+        },
+        {
+          "id": 20,
+          "name": "Картофель, кг"
         }
       ]
     },
     {
       "categoryId": 9,
-      "name": "Соки, нектары",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/211/soki-nektary",
+      "name": "Фрукты",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/153/frukty",
       "items": [
         {
-          "itemId": 39,
-          "name": "Сок J7 Апельсиновый",
-          "url": "/cat/425/p/sok-j7-apelsinovyj-s-makotu-970ml-3190682"
+          "id": 21,
+          "name": "Авокадо, кг"
         },
         {
-          "itemId": 40,
-          "name": "Сок Rich яблочный",
-          "url": "/cat/425/p/sok-rich-ablocnyj-1l-88544"
+          "id": 22,
+          "name": "Апельсины, кг"
         },
         {
-          "itemId": 41,
-          "name": "Сок Добрый Яблоко",
-          "url": "/cat/425/p/sok-dobryj-abloko-1l-58049"
+          "id": 22,
+          "name": "Груши Вильямс, кг"
         },
         {
-          "itemId": 42,
-          "name": "Сок Я Яблоко осветленный",
-          "url": "/cat/425/p/sok-a-abloko-osvetlennyj-970ml-3376409"
+          "id": 23,
+          "name": "Мандарины, кг"
+        },
+        {
+          "id": 24,
+          "name": "Бананы, кг"
+        },
+        {
+          "id": 25,
+          "name": "Яблоки Ред чиф, кг"
         }
       ]
     },
     {
       "categoryId": 10,
-      "name": "Мясо птицы",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/138/maso-pticy",
+      "name": "Крупы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/107/krupy-i-bobovye",
       "items": [
         {
-          "itemId": 43,
-          "name": "Филе грудки цыплёнка",
-          "url": "/cat/381/p/file-grudki-cyplenka-petelinka-kg-2173555"
+          "id": 26,
+          "name": "Рис Агро-Альянс Кубанский Экстра элитный шлифованный"
         },
         {
-          "itemId": 44,
-          "name": "Голень цыплёнка",
-          "url": "/cat/381/p/golen-cyplenka-petelinka-ohlazdennaa-kg-2073281"
+          "id": 27,
+          "name": "Гречка Гудвилл ядрица Экстра быстроразваривающаяся"
         }
       ]
     },
     {
       "categoryId": 11,
-      "name": "Говядина",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/142/govadina",
+      "name": "Макароны",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/105/makarony-pasta",
       "items": [
         {
-          "itemId": 45,
-          "name": "Гуляш из говядины",
-          "url": "/cat/381/p/gulas-iz-govadiny-perekrestok-kg-4012"
+          "id": 28,
+          "name": "Макароны Makfa соломка длинная"
         },
         {
-          "itemId": 46,
-          "name": "Говядина Мираторг для тушения",
-          "url": "/cat/381/p/govadina-miratorg-dla-tusenia-ohlazdennaa-kg-78001898"
+          "id": 29,
+          "name": "Макаронные изделия Barilla Capellini n.1"
         },
         {
-          "itemId": 47,
-          "name": "Стейк из телятины тип А",
-          "url": "/cat/381/p/stejk-iz-telatiny-miratorg-fitnes-beskostnyj-kategoria-a-ohlazdennyj-350g-3935135"
+          "id": 30,
+          "name": "Макароны Makfa ракушки"
+        },
+        {
+          "id": 31,
+          "name": "Макаронные изделия Barilla Penne Rigate n.73"
         }
       ]
     },
     {
       "categoryId": 12,
-      "name": "Охлаждённая рыба",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/176/ohlazdennaa-ryba",
+      "name": "Растительное масло",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/104/rastitelnoe-maslo",
       "items": [
         {
-          "itemId": 48,
-          "name": "Сёмга стейк охлаждённый",
-          "url": "/cat/386/p/semga-stejk-ohlazdennyj-kg-57597"
+          "id": 32,
+          "name": "Масло подсолнечное Altero с добавлением оливкового"
         },
         {
-          "itemId": 49,
-          "name": "Минтай охлажденный",
-          "url": "/cat/386/p/mintaj-bez-golovy-ohlazdennyj-kg-3094397"
-        },
-        {
-          "itemId": 50,
-          "name": "Треска филе",
-          "url": "/cat/386/p/treska-file-ohlazdennoe-kg-3197733"
+          "id": 33,
+          "name": "Масло оливковое Borges Extra Virgin Original,"
         }
       ]
     },
     {
       "categoryId": 13,
-      "name": "Морепродукты и креветки",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/179/moreprodukty-i-krevetki",
+      "name": "Сок",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/211/soki-nektary",
       "items": [
         {
-          "itemId": 51,
-          "name": "Креветки варёно-мороженые неочищенные",
-          "url": "/cat/419/p/krevetki-120-150-vareno-morozenye-neocisennye-kg-3647723"
+          "id": 34,
+          "name": "Сок Rich яблочный"
         },
         {
-          "itemId": 52,
-          "name": "Кальмар командорский Polar замороженный филе,",
-          "url": "/cat/419/p/kalmar-komandorskij-polar-zamorozennyj-file-500g-3690397"
+          "id": 35,
+          "name": "Сок Я Яблоко осветленный"
+        },
+        {
+          "id": 36,
+          "name": "Сок Добрый Яблоко"
         }
       ]
     },
     {
       "categoryId": 14,
-      "name": "Завтраки",
-      "baseUrl": "https://www.perekrestok.ru/cat/c/225/podusecki-musli-hlopa",
+      "name": "Курица",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/138/maso-pticy",
       "items": [
         {
-          "itemId": 53,
-          "name": "Хлопья Fitness",
-          "url": "/cat/398/p/hlopa-fitness-iz-celnoj-psenicy-230g-4102253"
+          "id": 37,
+          "name": "Цыплёнок Петелинка 1 категория охлаждённый"
         },
         {
-          "itemId": 54,
-          "name": "Завтрак Nesquik Duo",
-          "url": "/cat/398/p/zavtrak-gotovyj-nesquik-duo-sokoladnyj-250g-3363325"
+          "id": 38,
+          "name": "Филе грудки цыплёнка Петелинка"
+        }
+      ]
+    },
+    {
+      "categoryId": 15,
+      "name": "Говядина",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/142/govadina",
+      "items": [
+        {
+          "id": 40,
+          "name": "Задняя часть говяжья Перекрёсток без кости"
         },
         {
-          "itemId": 55,
-          "name": "Мюсли Ого с яблоком запечённые",
-          "url": "/cat/398/p/musli-ogo-s-ablokom-zapecennye-350g-2137654"
+          "id": 41,
+          "name": "Лопаточная часть говяжья Перекрёсток без кости"
         },
         {
-          "itemId": 56,
-          "name": "Гранола-мюсли Extra с молочным шоколадом",
-          "url": "/cat/398/p/granola-musli-extra-s-molocnym-sokoladom-300g-3691086"
+          "id": 42,
+          "name": "Говядина Мираторг для тушения охлаждённая"
+        }
+      ]
+    },
+    {
+      "categoryId": 16,
+      "name": "Охлаждённая рыба",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/176/ohlazdennaa-ryba",
+      "items": [
+        {
+          "id": 43,
+          "name": "Сёмга стейк охлаждённый"
+        },
+        {
+          "id": 44,
+          "name": "Треска филе охлаждённое"
+        }
+      ]
+    },
+    {
+      "categoryId": 17,
+      "name": "Овощные консервы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/76/ovosnye-konservy",
+      "items": [
+        {
+          "id": 45,
+          "name": "Горошек Globus зелёный"
+        },
+        {
+          "id": 46,
+          "name": "Кукуруза Heinz сладкая"
+        },
+        {
+          "id": 47,
+          "name": "Огурчики Дядя Ваня По-Берлински"
+        }
+      ]
+    },
+    {
+      "categoryId": 18,
+      "name": "Мясные консервы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/78/masnye-konservy",
+      "items": [
+        {
+          "id": 48,
+          "name": "Говядина Барс Экстра тушёная"
+        },
+        {
+          "id": 49,
+          "name": "Свинина Барс Экстра тушёная высший сорт"
         }
       ]
     }
+
   ]
 }

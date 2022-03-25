@@ -20,16 +20,11 @@ class ShopFetcherService(
         val productList: MutableList<ProductItem> = mutableListOf()
         val page = connector.connect(roadmapCategory.baseUrl);
         for (item in roadmapCategory.items) {
-            val itemUrl = item.url
-            println(itemUrl)
-            val itemElement = page!!.select("a[href$=$itemUrl]").first().parent()
-
-            val rawPrice = parsePrice(itemElement)
+            println("${item.itemId} : ${item.name}")
+            val productCard = page!!.select("span:contains(${item.name})").first().parent().parent()
+            val rawPrice = parsePrice(productCard)
 
             item.price = trimPrice(rawPrice)
-            item.url = "https://www.perekrestok.ru${item.url}"
-
-
             productList.add(ProductItem(item))
         }
 
@@ -43,7 +38,8 @@ class ShopFetcherService(
     }
 
     override fun trimPrice(price: String): Double {
-        val splited = price.split(" ")[0]
+        var splited = price.split(" ")[0]
+        splited = splited.replace(" ", "")
         return splited.replace(",", ".").toDouble()
     }
 
@@ -54,9 +50,8 @@ class ShopFetcherService(
             val page = connector.connect(category.baseUrl)
 
             for (item in category.items) {
-                val element = page!!.select("a[href$=${item.url}").text()
+                val element = page!!.select("span:contains(${item.name})").text()
                 if (element.isBlank()) {
-                    item.url = "https://www.perekrestok.ru${item.url}"
                     val errorProductItem = ErrorProductItem(item);
                     errorProductItem.category = category.name
                     errorsList.add(errorProductItem)
