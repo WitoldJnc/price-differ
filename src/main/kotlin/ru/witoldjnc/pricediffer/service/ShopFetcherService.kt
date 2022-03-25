@@ -1,45 +1,71 @@
 package ru.witoldjnc.pricediffer.service
 
+import org.apache.commons.lang3.StringUtils
+import org.jsoup.nodes.Element
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
-import ru.witoldjnc.pricediffer.model.ProductItem
-import ru.witoldjnc.pricediffer.dto.RoadmapProduct
-import ru.witoldjnc.pricediffer.model.ErrorAddressProductList
+import ru.witoldjnc.pricediffer.dto.RoadmapCategory
 import ru.witoldjnc.pricediffer.model.ErrorProductItem
+import ru.witoldjnc.pricediffer.model.ProductItem
 import ru.witoldjnc.pricediffer.repository.Connector
 import ru.witoldjnc.pricediffer.repository.ShopFetcher
-import java.util.stream.Collectors
 
 @Service
 class ShopFetcherService(
         @Qualifier("jsoupWrapper") private val connector: Connector
 ) : ShopFetcher {
 
-    override fun enrichPriceFromRoadmapItems(roadmapProducts: List<RoadmapProduct>): List<ProductItem> {
-        val res = roadmapProducts.stream()
-                .peek { it.price = fetchPriceFromItem(it) }
-                .map { ProductItem(it) }
-                .collect(Collectors.toList())
-        connector.close();
-        return res;
+
+    override fun getPriceByCategory(roadmapCategory: RoadmapCategory): MutableList<ProductItem> {
+        val productList: MutableList<ProductItem> = mutableListOf()
+        val page = connector.connect(roadmapCategory.baseUrl);
+        for (item in roadmapCategory.items) {
+            val itemUrl = item.url
+            println(itemUrl)
+            val itemElement = page!!.select("a[href$=$itemUrl]").first().parent()
+
+            val rawPrice = parsePrice(itemElement)
+
+            item.price = trimPrice(rawPrice)
+            item.url = "https://www.perekrestok.ru${item.url}"
+
+
+            productList.add(ProductItem(item))
+        }
+
+        return productList;
     }
 
-    override fun fetchPriceFromItem(item: RoadmapProduct): Double {
-        val page = connector.connect(item.url)
-        val count = page?.select("meta[itemprop$=price]")?.first()?.attr("content")
-        return count?.toDouble() ?: 0.0;
+    override fun parsePrice(itemElement: Element): String {
+        val priceNew = itemElement.select(".price-new").text()
+        val priceOld = itemElement.select(".price-old").text()
+        return StringUtils.firstNonBlank(priceOld, priceNew)
     }
 
+    override fun trimPrice(price: String): Double {
+        val splited = price.split(" ")[0]
+        return splited.replace(",", ".").toDouble()
+    }
 
-     fun checkFaultUrls(roadmapItems: List<RoadmapProduct>): ErrorAddressProductList {
-        val errorsList : MutableList<ErrorProductItem> = mutableListOf()
-        for (item in roadmapItems) {
-            try {
-                var connect = connector.connect(item.url)
-            } catch (e: Exception) {
-                errorsList.add(ErrorProductItem(item))
+    override fun checkFaultUrls(categories: List<RoadmapCategory>): MutableList<ErrorProductItem> {
+        val errorsList: MutableList<ErrorProductItem> = mutableListOf()
+
+        for (category in categories) {
+            val page = connector.connect(category.baseUrl)
+
+            for (item in category.items) {
+                val element = page!!.select("a[href$=${item.url}").text()
+                if (element.isBlank()) {
+                    item.url = "https://www.perekrestok.ru${item.url}"
+                    val errorProductItem = ErrorProductItem(item);
+                    errorProductItem.category = category.name
+                    errorsList.add(errorProductItem)
+                }
             }
         }
-        return ErrorAddressProductList(errorsList)
+
+        return errorsList
     }
+
+
 }

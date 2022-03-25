@@ -2,8 +2,8 @@ package ru.witoldjnc.pricediffer.service
 
 import com.google.gson.Gson
 import org.springframework.stereotype.Component
-import ru.witoldjnc.pricediffer.dto.RoadmapListProducts
-import ru.witoldjnc.pricediffer.dto.RoadmapProduct
+import ru.witoldjnc.pricediffer.dto.RoadmapCategory
+import ru.witoldjnc.pricediffer.dto.RoadmapCategoryList
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -11,10 +11,10 @@ import java.nio.file.Paths
 @Component
 class JsonRoadmapParser {
 
-    fun getItemsFromRoadmap(): List<RoadmapProduct> {
+    fun getItemsFromRoadmap(): MutableList<RoadmapCategory> {
         val gson = Gson()
         val newBufferedReader = Files.newBufferedReader(Paths.get("src/main/resources/roadmap.json"))
-        return gson.fromJson<RoadmapListProducts>(newBufferedReader, RoadmapListProducts::class.java).product
+        return gson.fromJson<RoadmapCategoryList>(newBufferedReader, RoadmapCategoryList::class.java).product
     }
 }
 

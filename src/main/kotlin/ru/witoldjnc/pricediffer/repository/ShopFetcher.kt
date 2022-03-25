@@ -1,10 +1,14 @@
 package ru.witoldjnc.pricediffer.repository
 
+import org.jsoup.nodes.Element
+import ru.witoldjnc.pricediffer.dto.RoadmapCategory
+import ru.witoldjnc.pricediffer.model.ErrorProductItem
 import ru.witoldjnc.pricediffer.model.ProductItem
-import ru.witoldjnc.pricediffer.dto.RoadmapProduct
-import ru.witoldjnc.pricediffer.model.ErrorAddressProductList
+
 
 interface ShopFetcher {
-    fun fetchPriceFromItem(item: RoadmapProduct): Double
-    fun enrichPriceFromRoadmapItems(roadmapProducts: List<RoadmapProduct>): List<ProductItem>
+    fun getPriceByCategory(roadmapCategory: RoadmapCategory): MutableList<ProductItem>
+    fun parsePrice(itemElement: Element): String
+    fun trimPrice(price: String): Double
+    fun checkFaultUrls(categories: List<RoadmapCategory>): MutableList<ErrorProductItem>
 }
