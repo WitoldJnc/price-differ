@@ -1,14 +1,327 @@
 {
-  "products": [
+  "categories": [
     {
-      "name": "1",
-      "description" : "1",
-      "url": "https://www.perekrestok.ru/cat/363/p/ogurcy-luks-450g-44569"
+      "categoryId": 1,
+      "name": "Молоко",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/114/moloko",
+      "items": [
+        {
+          "id": 1,
+          "name": "Молоко пастеризованное Домик в деревне 3.7%"
+        },
+        {
+          "id": 2,
+          "name": "Молоко Простоквашино пастеризованное 2.5%"
+        }
+      ]
     },
     {
-      "name": "2",
-      "description" : "2",
-      "url": "https://www.perekrestok.ru/cat/399/p/pecene-ubilejnoe-tradicionnoe-vitaminizirovannoe-134g-3471174"
+      "categoryId": 2,
+      "name": "Сыр",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/122/syr",
+      "items": [
+        {
+          "id": 3,
+          "name": "Сыр Galbani Моцарелла 45%"
+        },
+        {
+          "id": 4,
+          "name": "Сыр Предгорье Кавказа Адыгейский 45%"
+        },
+        {
+          "id": 5,
+          "name": "Сыр Arla Natura Сливочный лёгкий 16%"
+        },
+        {
+          "id": 6,
+          "name": "Сыр мягкий Mlekara Subotica Сербская брынза 45%"
+        }
+      ]
+    },
+    {
+      "categoryId": 3,
+      "name": "Творог",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/117/tvorog",
+      "items": [
+        {
+          "id": 7,
+          "name": "Творог Село Зелёное обезжиренный 0%"
+        },
+        {
+          "id": 8,
+          "name": "Творог Село Зелёное Традиция 5%"
+        }
+      ]
+    },
+    {
+      "categoryId": 4,
+      "name": "Яйца",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/123/ajca",
+      "items": [
+        {
+          "id": 9,
+          "name": "Яйцо куриное Роскар Деревенское С1"
+        },
+        {
+          "id": 10,
+          "name": "Яйцо Окское столовое СО"
+        }
+      ]
+    },
+    {
+      "categoryId": 5,
+      "name": "Сметана",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/118/smetana",
+      "items": [
+        {
+          "id": 11,
+          "name": "Сметана Простоквашино 15%, 300"
+        },
+        {
+          "id": 12,
+          "name": "Сметана Домик в деревне 20%, 300"
+        }
+      ]
+    },
+    {
+      "categoryId": 6,
+      "name": "Кисломолочные продукты",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/120/kislomolocnye-produkty",
+      "items": [
+        {
+          "id": 13,
+          "name": "Кефир Простоквашино 2.5%"
+        },
+        {
+          "id": 14,
+          "name": "Ряженка Домик в Деревне 3.2%"
+        }
+      ]
+    },
+    {
+      "categoryId": 7,
+      "name": "Масло",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/121/maslo",
+      "items": [
+        {
+          "id": 15,
+          "name": "Масло сливочное Экомилк Традиционное 82.5%"
+        },
+        {
+          "id": 16,
+          "name": "Масло сладкосливочное Коровка Из Кореновки 82.5%"
+        }
+      ]
+    },
+    {
+      "categoryId": 8,
+      "name": "Овощи",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/150/ovosi",
+      "items": [
+        {
+          "id": 17,
+          "name": "Огурцы гладкие среднеплодные"
+        },
+        {
+          "id": 18,
+          "name": "Томаты красные сливовидные, кг"
+        },
+        {
+          "id": 19,
+          "name": "Морковь мытая, кг"
+        },
+        {
+          "id": 20,
+          "name": "Картофель, кг"
+        }
+      ]
+    },
+    {
+      "categoryId": 9,
+      "name": "Фрукты",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/153/frukty",
+      "items": [
+        {
+          "id": 21,
+          "name": "Авокадо, кг"
+        },
+        {
+          "id": 22,
+          "name": "Апельсины, кг"
+        },
+        {
+          "id": 22,
+          "name": "Груши Вильямс, кг"
+        },
+        {
+          "id": 23,
+          "name": "Мандарины, кг"
+        },
+        {
+          "id": 24,
+          "name": "Бананы, кг"
+        },
+        {
+          "id": 25,
+          "name": "Яблоки Ред чиф, кг"
+        }
+      ]
+    },
+    {
+      "categoryId": 10,
+      "name": "Крупы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/107/krupy-i-bobovye",
+      "items": [
+        {
+          "id": 26,
+          "name": "Рис Агро-Альянс Кубанский Экстра элитный шлифованный"
+        },
+        {
+          "id": 27,
+          "name": "Гречка Гудвилл ядрица Экстра быстроразваривающаяся"
+        }
+      ]
+    },
+    {
+      "categoryId": 11,
+      "name": "Макароны",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/105/makarony-pasta",
+      "items": [
+        {
+          "id": 28,
+          "name": "Макароны Makfa соломка длинная"
+        },
+        {
+          "id": 29,
+          "name": "Макаронные изделия Barilla Capellini n.1"
+        },
+        {
+          "id": 30,
+          "name": "Макароны Makfa ракушки"
+        },
+        {
+          "id": 31,
+          "name": "Макаронные изделия Barilla Penne Rigate n.73"
+        }
+      ]
+    },
+    {
+      "categoryId": 12,
+      "name": "Растительное масло",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/104/rastitelnoe-maslo",
+      "items": [
+        {
+          "id": 32,
+          "name": "Масло подсолнечное Altero с добавлением оливкового"
+        },
+        {
+          "id": 33,
+          "name": "Масло оливковое Borges Extra Virgin Original,"
+        }
+      ]
+    },
+    {
+      "categoryId": 13,
+      "name": "Сок",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/211/soki-nektary",
+      "items": [
+        {
+          "id": 34,
+          "name": "Сок Rich яблочный"
+        },
+        {
+          "id": 35,
+          "name": "Сок Я Яблоко осветленный"
+        },
+        {
+          "id": 36,
+          "name": "Сок Добрый Яблоко"
+        }
+      ]
+    },
+    {
+      "categoryId": 14,
+      "name": "Курица",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/138/maso-pticy",
+      "items": [
+        {
+          "id": 37,
+          "name": "Цыплёнок Петелинка 1 категория охлаждённый"
+        },
+        {
+          "id": 38,
+          "name": "Филе грудки цыплёнка Петелинка"
+        }
+      ]
+    },
+    {
+      "categoryId": 15,
+      "name": "Говядина",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/142/govadina",
+      "items": [
+        {
+          "id": 40,
+          "name": "Задняя часть говяжья Перекрёсток без кости"
+        },
+        {
+          "id": 41,
+          "name": "Лопаточная часть говяжья Перекрёсток без кости"
+        },
+        {
+          "id": 42,
+          "name": "Говядина Мираторг для тушения охлаждённая"
+        }
+      ]
+    },
+    {
+      "categoryId": 16,
+      "name": "Охлаждённая рыба",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/176/ohlazdennaa-ryba",
+      "items": [
+        {
+          "id": 43,
+          "name": "Сёмга стейк охлаждённый"
+        },
+        {
+          "id": 44,
+          "name": "Треска филе охлаждённое"
+        }
+      ]
+    },
+    {
+      "categoryId": 17,
+      "name": "Овощные консервы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/76/ovosnye-konservy",
+      "items": [
+        {
+          "id": 45,
+          "name": "Горошек Globus зелёный"
+        },
+        {
+          "id": 46,
+          "name": "Кукуруза Heinz сладкая"
+        },
+        {
+          "id": 47,
+          "name": "Огурчики Дядя Ваня По-Берлински"
+        }
+      ]
+    },
+    {
+      "categoryId": 18,
+      "name": "Мясные консервы",
+      "baseUrl": "https://www.perekrestok.ru/cat/c/78/masnye-konservy",
+      "items": [
+        {
+          "id": 48,
+          "name": "Говядина Барс Экстра тушёная"
+        },
+        {
+          "id": 49,
+          "name": "Свинина Барс Экстра тушёная высший сорт"
+        }
+      ]
     }
+
   ]
 }

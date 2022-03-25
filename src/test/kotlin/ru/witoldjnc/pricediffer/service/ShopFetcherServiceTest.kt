@@ -1,57 +1,118 @@
 package ru.witoldjnc.pricediffer.service
 
 import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.BeforeEach
 import org.mockito.Mockito
-import ru.witoldjnc.pricediffer.dto.RoadmapProduct
+import ru.witoldjnc.pricediffer.dto.RoadmapCategory
+import ru.witoldjnc.pricediffer.dto.RoadmapProductItem
 import ru.witoldjnc.pricediffer.repository.Connector
-import java.io.File
 
 internal class ShopFetcherServiceTest() : TestUtils() {
     private val connector = Mockito.mock(Connector::class.java)
-    private val parser = Mockito.mock(JsonRoadmapParser::class.java)
 
-    private val fetcher = ShopFetcherService(connector, parser);
+    private val fetcher = ShopFetcherService(connector);
+
+    private lateinit var fruitCategory: RoadmapCategory;
+    private lateinit var fruitDoc: Document
+    private lateinit var vegetableDoc: Document
+
 
     @BeforeEach
     fun init() {
-        val htmlWithoutSale = readFileDirectlyAsText("src/test/resources/withoutSaleDoc.html")
-        val htmlWithSale = readFileDirectlyAsText("src/test/resources/withSaleDoc.html")
-        val roadmapProducts = listOf<RoadmapProduct>(
-                RoadmapProduct("without sale name", "without sale description", "withoutSale-url"),
-                RoadmapProduct("with sale name", "with sale discription", "withSale-url"));
-        val documentWithoutSale = Jsoup.parse(htmlWithoutSale)
-        val documentWithSale = Jsoup.parse(htmlWithSale)
+        fruitCategory = RoadmapCategory(1, "фрукты", "https://www.perekrestok.ru/cat/c/153/frukty", mutableListOf(
+                RoadmapProductItem(1,  "Яблоки Гала"),
+                RoadmapProductItem(2, "Яблоки Гольден")
+        ))
 
-        Mockito.`when`(connector.connect("withoutSale-url")).thenReturn(documentWithoutSale)
-        Mockito.`when`(connector.connect("withSale-url")).thenReturn(documentWithSale)
-        Mockito.`when`(parser.parseRoadMap()).thenReturn(roadmapProducts)
-    }
+        val htmlFruitCategory = readFileDirectlyAsText("src/test/resources/fruits.html")
+        fruitDoc = Jsoup.parse(htmlFruitCategory)
 
-    @Test
-    fun fetchPriceShouldReturnCurrentPriceTest() {
-        val roadmapProduct = RoadmapProduct("name", "description", "withoutSale-url")
-        val fetchPriceFromItem = fetcher.fetchPriceFromItem(roadmapProduct)
-        assertEquals(41.90, fetchPriceFromItem)
+        val htmlVegetableCategory = readFileDirectlyAsText("src/test/resources/vegetables.html")
+        vegetableDoc = Jsoup.parse(htmlVegetableCategory)
+
+        Mockito.`when`(connector.connect("https://www.perekrestok.ru/cat/c/153/frukty")).thenReturn(fruitDoc)
+        Mockito.`when`(connector.connect("https://www.perekrestok.ru/cat/c/150/ovosi")).thenReturn(vegetableDoc)
 
     }
 
     @Test
-    fun fetchPriceShouldReturnPriceWithoutSaleTest() {
-        val roadmapProduct = RoadmapProduct("name", "description", "withSale-url")
-        val fetchPriceFromItem = fetcher.fetchPriceFromItem(roadmapProduct)
-        assertEquals(169.90, fetchPriceFromItem)
+    fun parsePriceShouldReturnOldPriceWhenSaleTest(){
+        val saleDoc = fruitCategory.items.find { it.name.equals("Яблоки Гольден") }
+        val saleElement = fruitDoc.select("a[href=/cat/350/p/abloki-golden-kg-3366324]").first().parent()
+
+        assertTrue(!saleElement.select(".price-new").text().isBlank())
+        assertTrue(!saleElement.select(".price-old").text().isBlank())
+
+        val salePrice = fetcher.parsePrice(saleElement)
+
+        assertEquals(salePrice, saleElement.select(".price-old").text())
     }
 
     @Test
-    fun enrichPriceFromRoadmapTest() {
-        val enrichPriceFromRoadmapItems = fetcher.enrichPriceFromRoadmapItems()
-        assertTrue(enrichPriceFromRoadmapItems.size == 2)
-        assertEquals(41.9, enrichPriceFromRoadmapItems.find { it.url.equals("withoutSale-url") }?.price)
-        assertEquals(169.9, enrichPriceFromRoadmapItems.find { it.url.equals("withSale-url") }?.price)
+    fun parsePriceShouldReturnCurrentPriceWhenHaveNoSaleTest(){
+        val wihtoutSaleDoc = fruitCategory.items.find { it.name.equals("Яблоки Гала") }
+        val withoutSaleElement = fruitDoc.select("a[href=/cat/350/p/abloki-gala-kg-3366336]").first().parent()
+
+        assertTrue(!withoutSaleElement.select(".price-new").text().isBlank())
+        assertTrue(withoutSaleElement.select(".price-old").text().isBlank())
+
+        val withoutSalePrice = fetcher.parsePrice(withoutSaleElement)
+
+        assertEquals(withoutSaleElement.select(".price-new").text(), withoutSalePrice)
     }
+
+    @Test
+    fun trimPriceShouldReturnDoublePrice(){
+        val rawPrice = fruitDoc.select(".price-new").first().text()
+        assertTrue(rawPrice.contains(" ₽"))
+        assertTrue(rawPrice.contains(","))
+
+        val trimPrice = fetcher.trimPrice(rawPrice)
+        assertTrue(!trimPrice.toString().contains(" ₽"))
+        assertTrue(!trimPrice.toString().contains(","))
+
+        fetcher.trimPrice("1 699,00 P")
+    }
+
+    @Test
+    fun getPriceByCategoryShouldReturnEnrichedList(){
+        val galaAppleBeforeMutate = fruitCategory.items.find { it.name.equals("Яблоки Гала") }
+        assertEquals(galaAppleBeforeMutate!!.price, 00.00)
+
+        val priceByCategory = fetcher.getPriceByCategory(fruitCategory)
+        val galaAppleAfterMutate = fruitCategory.items.find { it.name.equals("Яблоки Гала") }
+
+        assertTrue(galaAppleAfterMutate!!.price != 00.00)
+        assertTrue(priceByCategory.size == 2)
+
+    }
+
+    @Test
+    fun checkUrlFaults(){
+        val categoryName = "овощи"
+        val wrongItemName = "морковь"
+        val categories = mutableListOf<RoadmapCategory>(
+                fruitCategory,
+                RoadmapCategory(2, categoryName, "https://www.perekrestok.ru/cat/c/150/ovosi", mutableListOf(
+                        RoadmapProductItem(3,  "Картофель в сетке"),
+                        RoadmapProductItem(4,  wrongItemName)
+                ))
+        )
+        val selectWrongEl = vegetableDoc.select("span:contains(${wrongItemName})").text()
+
+        assertTrue(selectWrongEl.isBlank())
+
+        val errors = fetcher.checkFaultUrls(categories)
+
+        assertEquals(1, errors.size)
+        assertEquals(categoryName, errors.first().category)
+        assertEquals(wrongItemName, errors.first().name)
+
+    }
+
 
 }
