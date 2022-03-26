@@ -4,8 +4,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import ru.witoldjnc.pricediffer.repository.Connector
 
