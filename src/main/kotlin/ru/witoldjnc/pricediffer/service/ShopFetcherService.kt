@@ -15,12 +15,10 @@ class ShopFetcherService(
         @Qualifier("jsoupWrapper") private val connector: Connector
 ) : ShopFetcher {
 
-
     override fun getPriceByCategory(roadmapCategory: RoadmapCategory): MutableList<ProductItem> {
         val productList: MutableList<ProductItem> = mutableListOf()
         val page = connector.connect(roadmapCategory.baseUrl);
         for (item in roadmapCategory.items) {
-            println("${item.itemId} : ${item.name}")
             val productCard = page!!.select("span:contains(${item.name})").first().parent().parent()
             val rawPrice = parsePrice(productCard)
 
@@ -48,7 +46,6 @@ class ShopFetcherService(
 
         for (category in categories) {
             val page = connector.connect(category.baseUrl)
-
             for (item in category.items) {
                 val element = page!!.select("span:contains(${item.name})").text()
                 if (element.isBlank()) {
@@ -61,6 +58,5 @@ class ShopFetcherService(
 
         return errorsList
     }
-
 
 }

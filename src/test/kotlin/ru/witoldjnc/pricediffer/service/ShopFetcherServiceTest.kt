@@ -20,7 +20,6 @@ internal class ShopFetcherServiceTest() : TestUtils() {
     private lateinit var fruitDoc: Document
     private lateinit var vegetableDoc: Document
 
-
     @BeforeEach
     fun init() {
         fruitCategory = RoadmapCategory(1, "фрукты", "https://www.perekrestok.ru/cat/c/153/frukty", mutableListOf(
@@ -41,7 +40,6 @@ internal class ShopFetcherServiceTest() : TestUtils() {
 
     @Test
     fun parsePriceShouldReturnOldPriceWhenSaleTest(){
-        val saleDoc = fruitCategory.items.find { it.name.equals("Яблоки Гольден") }
         val saleElement = fruitDoc.select("a[href=/cat/350/p/abloki-golden-kg-3366324]").first().parent()
 
         assertTrue(!saleElement.select(".price-new").text().isBlank())
@@ -54,7 +52,6 @@ internal class ShopFetcherServiceTest() : TestUtils() {
 
     @Test
     fun parsePriceShouldReturnCurrentPriceWhenHaveNoSaleTest(){
-        val wihtoutSaleDoc = fruitCategory.items.find { it.name.equals("Яблоки Гала") }
         val withoutSaleElement = fruitDoc.select("a[href=/cat/350/p/abloki-gala-kg-3366336]").first().parent()
 
         assertTrue(!withoutSaleElement.select(".price-new").text().isBlank())
