@@ -6,7 +6,6 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
-import ru.witoldjnc.pricediffer.Controller
 import ru.witoldjnc.pricediffer.dto.RoadmapCategory
 import ru.witoldjnc.pricediffer.model.ErrorProductItem
 import ru.witoldjnc.pricediffer.model.ProductItem

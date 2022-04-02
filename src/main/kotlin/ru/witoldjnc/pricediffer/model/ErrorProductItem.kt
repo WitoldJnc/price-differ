@@ -11,4 +11,6 @@ class ErrorProductItem {
         name = roadmapProduct.name
         itemId = roadmapProduct.itemId
     }
+
+    constructor()
 }
